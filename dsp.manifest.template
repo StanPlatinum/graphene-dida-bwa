@@ -54,11 +54,11 @@ sgx.enclave_size = "256M"
 # Set maximum number of in-enclave threads (somewhat arbitrarily) to 4. Recall
 # that SGX v1 requires to specify the maximum number of simultaneous threads at
 # enclave creation time.
-sgx.thread_num = 3
+sgx.thread_num = 10
 
 # Specify protected data files
 
-# sgx.allowed_files.data= "file:data"
+sgx.allowed_files.data= "file:/mnt/graphene-dida-bwa"
 
 # Specify all libraries used by $(APP_NAME) and its dependencies (including all libs
 # which can be loaded at runtime via dlopen).
@@ -69,7 +69,9 @@ sgx.trusted_files.ld = "file:$(GRAPHENEDIR)/Runtime/ld-linux-x86-64.so.2"
 sgx.trusted_files.libc = "file:$(GRAPHENEDIR)/Runtime/libc.so.6"
 sgx.trusted_files.libm = "file:$(GRAPHENEDIR)/Runtime/libm.so.6"
 
-# sgx.trusted_files.libdl = "file:$(GRAPHENEDIR)/Runtime/libdl.so.2"
+# sgx.trusted_files.libdl = "file:/lib/x86_64-linux-gnu/libdl.so.2"
+sgx.trusted_files.libdl = "file:$(GRAPHENEDIR)/Runtime/libdl.so.2"
+
 # sgx.trusted_files.librt = "file:$(GRAPHENEDIR)/Runtime/librt.so.1"
 # sgx.trusted_files.libutil = "file:$(GRAPHENEDIR)/Runtime/libutil.so.1"
 

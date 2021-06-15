@@ -9,8 +9,8 @@
 
 THIS_DIR := $(dir $(lastword $(MAKEFILE_LIST)))
 
-# APP_NAME ?= dsp
-APP_NAME ?= mrg
+APP_NAME ?= dsp
+# APP_NAME ?= mrg
 
 APP_DIR ?= $(CURDIR)
 
@@ -41,7 +41,7 @@ include $(GRAPHENEDIR)/Scripts/Makefile.configs
 # We need to replace Glibc dependencies with Graphene-specific Glibc. The Glibc binaries are
 # already listed in the manifest template, so we can skip them from the ldd results.
 # GLIBC_DEPS = linux-vdso.so.1 /lib64/ld-linux-x86-64.so.2 libc.so.6 libpthread.so.0
-GLIBC_DEPS = linux-vdso.so.1 libstdc++.so.6 
+GLIBC_DEPS = linux-vdso.so.1 libstdc++.so.6 libdl.so.2
 #WeijieLiu: must include libstdc++ (manifest doesn't recognize '+')
 #WL: don't include the following libraries (don't know why, though)
 #WL: -fopenmp would introduce libpthread.so.0
@@ -94,7 +94,7 @@ pal_loader:
 
 .PHONY: run
 run: all
-	SGX=1 ./pal_loader ./$(APP_NAME) --help
+	SGX=1 ./pal_loader ./$(APP_NAME) -b25 -p 2 -g /mnt/graphene-dida-bwa/work/ref_80/ -u /mnt/graphene-dida-bwa/up -d /mnt/graphene-dida-bwa/pr/ -e 1 /mnt/graphene-dida-bwa/SRR062634.filt.fastq
 		# -b25 -p2 -g /work/ref_80/ -u /work/bf -d /data/a1 -e 1 /work/input.txt
 
 .PHONY: clean
