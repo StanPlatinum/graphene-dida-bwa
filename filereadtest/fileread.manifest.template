@@ -59,5 +59,4 @@ sgx.trusted_files.runtime = "file:{{ graphene.runtimedir() }}"
 sgx.trusted_files.arch_libdir = "file:{{ arch_libdir }}/"
 sgx.trusted_files.usr_arch_libdir = "file:/usr/{{ arch_libdir }}/"
 
-sgx.allowed_files.work = "file:/mnt/graphene-dida-bwa/work/"
-sgx.allowed_files.ref_80 = "file:/mnt/graphene-dida-bwa/work/ref_80/mref-1.fa"
+sgx.allowed_files.work = "file:data/"

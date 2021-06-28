@@ -149,8 +149,18 @@ size_t getInfo(const char *aName, unsigned k) {
   std::string line;
   std::ifstream faFile(aName);
 
+
+  printf("DBG: Filename: %s\n", aName);
   getline(faFile, line);
+  printf("DBG: line[0]: %c\n", line[0]);
+  std::cout << line << std::endl;
+
+  // getline(faFile, line);
+  // printf("DBG: line[0]: %c\n", line[0]);
+  // std::cout << line << std::endl;
+
   if (line[0] != '>') {
+    
     std::cerr << "Target file " << aName << " is not in correct format!\n";
     exit(EXIT_FAILURE);
   }

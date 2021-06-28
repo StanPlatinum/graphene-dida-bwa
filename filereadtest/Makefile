@@ -7,9 +7,9 @@
 #
 # Use `make clean` to remove Graphene-generated files.
 
-APP_NAME ?= dsp
+APP_NAME ?= fileread
 #WL: must be current abs path
-APP_DIR = /u/weijliu/graphene-dida-bwa
+APP_DIR = /u/weijliu/graphene-dida-bwa/filereadtest
 
 # Relative path to Graphene root and key for enclave signing
 GRAPHENEDIR ?= /usr/local/src/graphene
@@ -61,7 +61,7 @@ $(APP_NAME): $(APP_NAME).cpp
 
 .PHONY: run
 run: all
-	$(GRAPHENE) ./$(APP_NAME) -b25 -p 80 -g /mnt/graphene-dida-bwa/work/ref_80 -u /mnt/graphene-dida-bwa/up -d /mnt/graphene-dida-bwa/pr/ -e 0 /mnt/graphene-dida-bwa/SRR062634.filt.fastq		
+	$(GRAPHENE) ./$(APP_NAME)		
 
 .PHONY: clean
 clean:
