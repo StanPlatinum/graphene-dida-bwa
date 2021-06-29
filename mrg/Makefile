@@ -7,7 +7,7 @@
 #
 # Use `make clean` to remove Graphene-generated files.
 
-APP_NAME ?= dsp
+APP_NAME ?= mrg
 #WL: must be current abs path
 APP_DIR = /u/weijliu/graphene-dida-bwa/mrg
 
@@ -59,17 +59,16 @@ endif
 $(APP_NAME): $(APP_NAME).cpp
 	g++ -g $< -o $@
 
+PARTITIONS = 80
+
 .PHONY: run
 run: all
 	# must create the pr dir first, otherwise the callback would fail
-	mkdir up/
-	mkdir pr/
-	$(GRAPHENE) ./$(APP_NAME) -b25 -p 80 -g ./ref_80 -u ./up -d ./pr -e 1 ./SRR062634.filt.fastq		
+	$(GRAPHENE) ./$(APP_NAME) -p$(PARTITIONS) -a bwa-mem -m mem > output.sam		
 
 .PHONY: clean
 clean:
 	$(RM) *.manifest *.manifest.sgx *.token *.sig $(APP_NAME) pal_loader OUTPUT
 	$(RM) *-trusted-libs *-deps
-	$(RM) -rf up/ pr/
 .PHONY: distclean
 distclean: clean
