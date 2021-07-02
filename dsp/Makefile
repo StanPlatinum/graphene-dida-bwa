@@ -9,7 +9,7 @@
 
 APP_NAME ?= dsp
 #WL: must be current abs path
-APP_DIR = /u/weijliu/graphene-dida-bwa/mrg
+APP_DIR = /u/weijliu/graphene-dida-bwa/dsp
 
 # Relative path to Graphene root and key for enclave signing
 GRAPHENEDIR ?= /usr/local/src/graphene
@@ -62,14 +62,14 @@ $(APP_NAME): $(APP_NAME).cpp
 .PHONY: run
 run: all
 	# must create the pr dir first, otherwise the callback would fail
-	mkdir up/
-	mkdir pr/
-	$(GRAPHENE) ./$(APP_NAME) -b25 -p 80 -g ./ref_80 -u ./up -d ./pr -e 1 ./SRR062634.filt.fastq		
+	$(RM) -rf /mnt/graphene-dida-bwa/pr/
+	mkdir /mnt/graphene-dida-bwa/pr/
+	$(GRAPHENE) ./$(APP_NAME) -b25 -p 80 -g /mnt/graphene-dida-bwa/work/ref_80 -u /mnt/graphene-dida-bwa/up -d /mnt/graphene-dida-bwa/pr -e 1 /mnt/graphene-dida-bwa/SRR062634.filt.fastq		
 
 .PHONY: clean
 clean:
 	$(RM) *.manifest *.manifest.sgx *.token *.sig $(APP_NAME) pal_loader OUTPUT
 	$(RM) *-trusted-libs *-deps
-	$(RM) -rf up/ pr/
+	# $(RM) -rf /mnt/graphene-dida-bwa/pr/
 .PHONY: distclean
 distclean: clean

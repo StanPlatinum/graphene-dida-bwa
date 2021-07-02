@@ -134,16 +134,18 @@ void memMer(const int pNum, const std::string &alignerName) {
     std::string mapStr(alignerName);
     std::ifstream samFiles[pNum+1];
 
+    std::string abs_path = "/mnt/graphene-dida-bwa/pr/out/";
     for (int i = 0; i < pNum; ++i) {
         std::stringstream sstm;
-        sstm << "aln-" << i+1 << ".sam";
+        sstm << abs_path << "aln-" << i+1 << ".sam";
         samFiles[i].open(sstm.str().c_str());
     }
     samFiles[pNum].open("lreads.sam");
 
     std::priority_queue< samRec, std::vector<samRec>, std::greater<samRec> > recBuffer;
     std::string line;
-    std::ofstream comFile("aln.sam", std::ios_base::app);
+    std::string output_abs_path = abs_path + "aln.sam";
+    std::ofstream comFile(output_abs_path, std::ios_base::app);
 
     // Skipping @
     for (int i = 0; i < pNum; ++i) {

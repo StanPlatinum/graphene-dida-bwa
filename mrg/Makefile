@@ -63,7 +63,7 @@ PARTITIONS = 80
 
 .PHONY: run
 run: all
-	# must create the pr dir first, otherwise the callback would fail
+	$(RM) /mnt/graphene-dida-bwa/pr/out/aln.sam
 	$(GRAPHENE) ./$(APP_NAME) -p$(PARTITIONS) -a bwa-mem -m mem > output.sam		
 
 .PHONY: clean
