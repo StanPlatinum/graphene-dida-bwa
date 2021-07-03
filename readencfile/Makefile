@@ -7,10 +7,9 @@
 #
 # Use `make clean` to remove Graphene-generated files.
 
-APP_NAME ?= mrg
+APP_NAME ?= read
 #WL: must be current abs path
-APP_DIR = /u/weijliu/graphene-dida-bwa/mrg
-# APP_DIR = /mnt/graphene-dida-bwa/pr/out
+APP_DIR = /u/weijliu/graphene-dida-bwa/readencfile
 
 # Relative path to Graphene root and key for enclave signing
 GRAPHENEDIR ?= /usr/local/src/graphene
@@ -57,20 +56,18 @@ else
 GRAPHENE = graphene-sgx
 endif
 
-$(APP_NAME): $(APP_NAME).cpp
-	g++ -g $< -o $@
+$(APP_NAME): $(APP_NAME).c
+	gcc -g $< -o $@
 
-PARTITIONS = 40
+PARTITIONS = 80
 
 .PHONY: run
 run: all
-	$(RM) /mnt/graphene-dida-bwa/pr/out/aln.sam
-	$(GRAPHENE) ./$(APP_NAME) -p$(PARTITIONS) -a bwa-mem -m mem > output.sam		
+	$(GRAPHENE) ./$(APP_NAME) 	
 
 .PHONY: clean
 clean:
 	$(RM) *.manifest *.manifest.sgx *.token *.sig $(APP_NAME) pal_loader OUTPUT
 	$(RM) *-trusted-libs *-deps
-	$(RM) output.sam
 .PHONY: distclean
 distclean: clean
