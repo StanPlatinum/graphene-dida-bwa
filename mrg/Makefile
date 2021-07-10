@@ -60,7 +60,7 @@ endif
 $(APP_NAME): $(APP_NAME).cpp
 	g++ -g $< -o $@
 
-PARTITIONS = 40
+PARTITIONS = 10
 
 .PHONY: run
 run: all

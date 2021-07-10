@@ -1,17 +1,17 @@
 # DO NOT MODIFY. THIS FILE WAS AUTO-GENERATED.
 
 [libos]
-entrypoint = "/u/weijliu/graphene-dida-bwa/dsp/dsp"
+entrypoint = "/u/weijliu/graphene-dida-bwa/mrg/mrg"
 
 [loader]
-argv0_override = "dsp"
+argv0_override = "mrg"
 preload = "file:/usr/local/lib/x86_64-linux-gnu/graphene/libsysdb.so"
 log_level = "error"
 insecure__use_cmdline_argv = true
 pal_internal_mem_size = "512M"
 
 [sgx]
-enclave_size = "32G"
+enclave_size = "2G"
 thread_num = 9
 protected_files_key = "ffeeddccbbaa99887766554433221100"
 isvprodid = 0
@@ -32,7 +32,7 @@ HOME = "/u/weijliu"
 
 [sgx.trusted_files]
 preload0 = "file:/usr/local/lib/x86_64-linux-gnu/graphene/libsysdb.so"
-dsp = "file:/u/weijliu/graphene-dida-bwa/dsp/dsp"
+mrg = "file:/u/weijliu/graphene-dida-bwa/mrg/mrg"
 02fef1b339af9160b07ef684c83116a45545d7b2becfa7defd598b48596ff569 = "file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/crt1.o"
 2b3062c73d36b72bd57717cc360c508984236aba75a3a619427dcdc8aa964d2f = "file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/crti.o"
 df6058f3e329a174ab587c5adc2e13a95742bc100fd45a46b6cf32f963604757 = "file:/usr/local/lib/x86_64-linux-gnu/graphene/runtime/glibc/crtn.o"
@@ -8910,7 +8910,7 @@ protected = "file:/mnt/graphene-dida-bwa/pr/"
 
 [sgx.trusted_checksum]
 preload0 = "4951377babeea17457c1fd28bd1105edd22c592a21df53e8c791acdadbc1e046"
-dsp = "2f1fc076a2b60388e521e385fdabe1d40b7d4ef1650967592de9fd6a1bfab986"
+mrg = "981201a18f2953d1a12317cfec9a16b22cfa47a426c2be8c27c8aa6b9ed452fc"
 02fef1b339af9160b07ef684c83116a45545d7b2becfa7defd598b48596ff569 = "1b49b7e7b3088e0e2a290d04324c13ecf52ce26e07ca1b83db49dc3027a2765d"
 2b3062c73d36b72bd57717cc360c508984236aba75a3a619427dcdc8aa964d2f = "0c8ef9f9627f4c0d3cb52e9fc46662787141ae49a57a50e1a40c1b96af632996"
 df6058f3e329a174ab587c5adc2e13a95742bc100fd45a46b6cf32f963604757 = "df37c23206d280925216df48eb2d114b283fb28c116e952afe907250e0b89faa"
@@ -17798,10 +17798,10 @@ type = "chroot"
 path = "/etc"
 uri = "file:/etc"
 
-[fs.mount.dsp]
+[fs.mount.mrg]
 type = "chroot"
-path = "/u/weijliu/graphene-dida-bwa/dsp"
-uri = "file:/u/weijliu/graphene-dida-bwa/dsp"
+path = "/u/weijliu/graphene-dida-bwa/mrg"
+uri = "file:/u/weijliu/graphene-dida-bwa/mrg"
 
 [fs.mount.mnt]
 type = "chroot"

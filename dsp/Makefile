@@ -57,9 +57,14 @@ GRAPHENE = graphene-sgx
 endif
 
 $(APP_NAME): $(APP_NAME).cpp
-	g++ -g $< -o $@
+	g++ -g $< -o $@ -fopenmp
 
-PARTITIONS = 40
+PARTITIONS = 10
+
+run-bf: $(APP_NAME)
+	$(RM) -r /mnt/graphene-dida-bwa/up/
+	mkdir /mnt/graphene-dida-bwa/up/
+	./$(APP_NAME) -b25 -p $(PARTITIONS) -g /mnt/graphene-dida-bwa/work/ref_$(PARTITIONS) -u /mnt/graphene-dida-bwa/up -d /mnt/graphene-dida-bwa/pr -e 0 /mnt/graphene-dida-bwa/SRR062634.filt.fastq
 
 .PHONY: run
 run: all

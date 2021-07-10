@@ -49,14 +49,14 @@ fs.mount.mnt.uri = "file:/mnt"
 
 # Set enclave size (somewhat arbitrarily) to 256MB. Recall that SGX v1 requires
 # to specify enclave size at enclave creation time.
-sgx.enclave_size = "32G"
+sgx.enclave_size = "8G"
 
 loader.pal_internal_mem_size = "512M"
 
 # Set maximum number of in-enclave threads (somewhat arbitrarily) to 4. Recall
 # that SGX v1 requires to specify the maximum number of simultaneous threads at
 # enclave creation time.
-sgx.thread_num = 9
+sgx.thread_num = 11
 
 # Specify all binaries used by the target binary and its dependencies (including all libs)
 # which can be loaded at runtime via dlopen).
@@ -67,7 +67,6 @@ sgx.trusted_files.usr_arch_libdir = "file:/usr/{{ arch_libdir }}/"
 
 sgx.allowed_files.work = "file:/mnt/graphene-dida-bwa/work/"
 
-# sgx.allowed_files.ref_80 = "file:ref_80/"
 # sgx.allowed_files.unprotected = "file:up/"
 # sgx.allowed_files.SRR062634 = "file:./SRR062634.filt.fastq"
 # sgx.allowed_files.protected = "file:pr/"
