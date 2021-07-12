@@ -1,0 +1,141 @@
+DBG: case r..
+num-hash=5
+bit-item=8
+bmer-step=-4
+bmer=25
+alen=20
+dst=/usr/local/src/work/pr
+src_gen=/usr/local/src/work/ref_10
+index=2
+se=0
+BF File : /usr/local/src/work/up/10_25
+Running dispatch with a precalculated bloom filter
+Reading size :  0 from /usr/local/src/work/up/10_25_2
+Closing files...
+Writing to the maxinf
+Running time in sec: 178.475
+DBG: case r..
+num-hash=5
+bit-item=8
+bmer-step=-4
+bmer=25
+alen=20
+dst=/usr/local/src/work/pr
+src_gen=/usr/local/src/work/ref_10
+index=3
+se=0
+BF File : /usr/local/src/work/up/10_25
+Running dispatch with a precalculated bloom filter
+Reading size :  0 from /usr/local/src/work/up/10_25_3
+Closing files...
+Writing to the maxinf
+Running time in sec: 179.367
+DBG: case r..
+num-hash=5
+bit-item=8
+bmer-step=-4
+bmer=25
+alen=20
+dst=/usr/local/src/work/pr
+src_gen=/usr/local/src/work/ref_10
+index=4
+se=0
+BF File : /usr/local/src/work/up/10_25
+Running dispatch with a precalculated bloom filter
+Reading size :  0 from /usr/local/src/work/up/10_25_4
+Closing files...
+Writing to the maxinf
+Running time in sec: 178.6
+DBG: case r..
+num-hash=5
+bit-item=8
+bmer-step=-4
+bmer=25
+alen=20
+dst=/usr/local/src/work/pr
+src_gen=/usr/local/src/work/ref_10
+index=5
+se=0
+BF File : /usr/local/src/work/up/10_25
+Running dispatch with a precalculated bloom filter
+Reading size :  0 from /usr/local/src/work/up/10_25_5
+Closing files...
+Writing to the maxinf
+Running time in sec: 179.948
+DBG: case r..
+num-hash=5
+bit-item=8
+bmer-step=-4
+bmer=25
+alen=20
+dst=/usr/local/src/work/pr
+src_gen=/usr/local/src/work/ref_10
+index=6
+se=0
+BF File : /usr/local/src/work/up/10_25
+Running dispatch with a precalculated bloom filter
+Reading size :  0 from /usr/local/src/work/up/10_25_6
+Closing files...
+Writing to the maxinf
+Running time in sec: 178.716
+DBG: case r..
+num-hash=5
+bit-item=8
+bmer-step=-4
+bmer=25
+alen=20
+dst=/usr/local/src/work/pr
+src_gen=/usr/local/src/work/ref_10
+index=7
+se=0
+BF File : /usr/local/src/work/up/10_25
+Running dispatch with a precalculated bloom filter
+Reading size :  0 from /usr/local/src/work/up/10_25_7
+Closing files...
+Writing to the maxinf
+Running time in sec: 178.642
+DBG: case r..
+num-hash=5
+bit-item=8
+bmer-step=-4
+bmer=25
+alen=20
+dst=/usr/local/src/work/pr
+src_gen=/usr/local/src/work/ref_10
+index=8
+se=0
+BF File : /usr/local/src/work/up/10_25
+Running dispatch with a precalculated bloom filter
+Reading size :  0 from /usr/local/src/work/up/10_25_8
+Closing files...
+Writing to the maxinf
+Running time in sec: 179.034
+DBG: case r..
+num-hash=5
+bit-item=8
+bmer-step=-4
+bmer=25
+alen=20
+dst=/usr/local/src/work/pr
+src_gen=/usr/local/src/work/ref_10
+index=9
+se=0
+BF File : /usr/local/src/work/up/10_25
+Running dispatch with a precalculated bloom filter
+Reading size :  0 from /usr/local/src/work/up/10_25_9
+Closing files...
+Writing to the maxinf
+Running time in sec: 179.917
+DBG: case r..
+num-hash=5
+bit-item=8
+bmer-step=-4
+bmer=25
+alen=20
+dst=/usr/local/src/work/pr
+src_gen=/usr/local/src/work/ref_10
+index=10
+se=0
+BF File : /usr/local/src/work/up/10_25
+Running dispatch with a precalculated bloom filter
+Reading size :  0 from /usr/local/src/work/up/10_25_10
